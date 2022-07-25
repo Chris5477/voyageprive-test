@@ -1,5 +1,6 @@
 import headBarcelona from "../assets/offers/barcelona/barcelona.jpg";
 import logoVP from "../assets/logo/VPLogo.svg";
+import { offers } from "../utils/offers";
 import Card from "../components/Card";
 
 const Offers = () => {
@@ -17,10 +18,17 @@ const Offers = () => {
 			</header>
 			<main>
 				<div className="grid-card">
-					<Card />
-					<Card />
-					<Card />
-					<Card />
+					{offers.map(({ id, pictureUrl, country, location, description, establishment, promotion }) => (
+						<Card
+							key={id}
+							picture={pictureUrl}
+							country={country}
+							location={location}
+							description={description}
+							establishment={establishment}
+							promotion={promotion}
+						/>
+					))}
 				</div>
 			</main>
 		</div>
