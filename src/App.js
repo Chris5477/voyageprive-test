@@ -1,8 +1,9 @@
-import Login from "./pages/Login"
+import Offers from "./pages/Offers";
+
 const App = () =>  {
 	return (
 		<div className="App">
-			<Login />
+			<Offers />
 		</div>
 	);
 }
