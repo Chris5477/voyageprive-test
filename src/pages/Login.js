@@ -5,7 +5,7 @@ import Input from "../components/Input";
 const Login = () => {
 	return (
 		<div className="login-page">
-				<figure>
+				<figure className="bg-login">
 					<img src={bgLogin} alt="paysage avec des montgolfière" />
 				</figure>
 			<header>
@@ -14,8 +14,8 @@ const Login = () => {
 				</h1>
 			</header>
 			<main>
-				<h2>Quel sera votre prochain voyage ?</h2>
-				<form>
+				<h2 className="title-login-page">Quel sera votre prochain voyage ?</h2>
+				<form className="login-form">
 					<h2>Connectez-vous</h2>
 					<Input id="nom" />
 					<Input id="prenom" />
