@@ -13,7 +13,9 @@ const Card = () => {
 					<p className="establishment">Hôtel Volga 4*</p>
 				</div>
 				<div>
-					<p className="promotion-rate">Jusqu'à <span>-56%</span></p>
+					<p className="promotion-rate">
+						Jusqu'à <span>-56%</span>
+					</p>
 				</div>
 			</div>
 		</div>
