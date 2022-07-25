@@ -4,7 +4,7 @@ import Input from "../components/Input";
 
 const Login = () => {
 	return (
-		<div className="login-page">
+		<div className="page login-page">
 				<figure className="bg-login">
 					<img src={bgLogin} alt="paysage avec des montgolfière" />
 				</figure>
