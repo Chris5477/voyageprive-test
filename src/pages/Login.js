@@ -1,45 +1,54 @@
-import bgLogin from "../assets/background-image/bg-login.jpg";
 import Input from "../components/Input";
 import { useEffect, useState } from "react";
-import bgLogin2 from "../assets/background-image/bg-login2.jpg";
-import bgLogin3 from "../assets/background-image/bg-login3.jpg";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
+import { listBgImage } from "../utils/listPicturesBg";
 
 const Login = () => {
-	const navigate = useNavigate();
-
 	const loginInitialState = {
 		firstName: "",
 		lastName: "",
 		email: "",
 	};
 
-	const listBgImage = [
-		{ picture: bgLogin, alt: "paysage avec des montgolfière" },
-		{ picture: bgLogin2, alt: "vue sur des grattes-ciel" },
-		{ picture: bgLogin3, alt: "ville au bord de la mer" },
-	];
+	// SETTINGS HOOKS **********************************************************
 
+	const navigate = useNavigate();
 	const [indexFirstImg, setIndexFirstImg] = useState(0);
 	const [indexSecondImg, setIndexSecondImg] = useState(1);
 	const [userData, setUserData] = useState(loginInitialState);
 	const [messageForm, setMessageForm] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
+
+	// GET ALL KEY OF INITIALSTATE **********************************************
+
 	const { firstName, lastName, email } = userData;
+
+	// FUNCTIONS FORMS ***********************************************************
 
 	const handleChangeLogin = (e) => {
 		const { name, value } = e.target;
 		setUserData({ ...userData, [name]: value });
 	};
 
-	const requestWaitingSimulation = async () => {
-		redirectUserToOfferPage();
-	};
-
 	const redirectUserToOfferPage = () => {
 		setTimeout(() => navigate("/offers"), 2000);
 	};
+
+	const login = (e) => {
+		e.preventDefault();
+		const valueState = Object.values(userData).every((value) => value);
+
+		if (!valueState) {
+			setMessageForm(true);
+		} else {
+			setMessageForm(false);
+			setIsSubmitting(true);
+			redirectUserToOfferPage();
+		}
+	};
+
+	// MANAGEMENT ANIMATION CLASS CSS FOR LOGIN PAGE ************************************
 
 	const removeClassCSS = () => {
 		document.querySelector(".bg-login img").classList.remove("fade-out");
@@ -66,6 +75,8 @@ const Login = () => {
 		}
 	};
 
+	// ALLOWS TO CHANGES INDEX OF PICTURE BACKGROUND ALL THE 5 SECONDES ***************
+
 	useEffect(() => {
 		setTimeout(() => {
 			settingsIndex();
@@ -73,19 +84,6 @@ const Login = () => {
 			setTimeout(addAnimationClass, 100);
 		}, 5000);
 	}, [indexFirstImg, indexSecondImg]);
-
-	const login = (e) => {
-		e.preventDefault();
-		const valueState = Object.values(userData).every((value) => value);
-
-		if (!valueState) {
-			setMessageForm(true);
-		} else {
-			setMessageForm(false);
-			setIsSubmitting(true);
-			requestWaitingSimulation();
-		}
-	};
 
 	return (
 		<div className="page login-page">
