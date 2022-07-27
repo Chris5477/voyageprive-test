@@ -5,8 +5,8 @@ import LoaderApp from "./components/LoaderApp";
 const App = () =>  {
 	return (
 		<div className="App">
-			{<LoaderApp />}
-			{/* <Login /> */}
+			{/* {<LoaderApp />} */}
+			<Login />
 			{/* <Offers /> */}
 		</div>
 	);

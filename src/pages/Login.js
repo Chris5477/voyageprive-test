@@ -22,6 +22,7 @@ const Login = () => {
 	const [indexSecondImg, setIndexSecondImg] = useState(1);
 	const [userData, setUserData] = useState(loginInitialState);
 	const [messageForm, setMessageForm] = useState(false);
+	const [isSubmitting, setIsSubmitting] = useState(false);
 	const { firstName, lastName, email } = userData;
 
 	const handleChangeLogin = (e) => {
@@ -29,13 +30,7 @@ const Login = () => {
 		setUserData({ ...userData, [name]: value });
 	};
 
-	const runAnimation = () => {
-		// futur animation here
-		return null;
-	};
-
 	const requestWaitingSimulation = () => {
-		runAnimation();
 		redirectUserToOfferPage();
 	};
 
@@ -84,6 +79,7 @@ const Login = () => {
 			setMessageForm(true);
 		} else {
 			setMessageForm(false);
+			setIsSubmitting(true);
 			requestWaitingSimulation();
 		}
 	};
@@ -111,7 +107,12 @@ const Login = () => {
 					<Input id="prenom" value={lastName} name="lastName" handleChange={handleChangeLogin} />
 					<Input id="email" type="email" value={email} name="email" handleChange={handleChangeLogin} />
 					{messageForm && <p className="error-form">Veuillez remplir tout les champs</p>}
-					<input type="submit" value="Se connecter" />
+					<input
+						type="submit"
+						value="Se connecter"
+						disabled={isSubmitting}
+						style={isSubmitting ? { backgroundColor: "#712d48" } : {}}
+					/>
 				</form>
 			</main>
 		</div>
