@@ -99,9 +99,9 @@ const Login = () => {
 			<main>
 				<form className="login-form" onSubmit={login}>
 					<h2>Connectez-vous</h2>
-					<Input id="nom" value={firstName} name="firstName" handleChange={handleChangeLogin} />
-					<Input id="prenom" value={lastName} name="lastName" handleChange={handleChangeLogin} />
-					<Input id="email" type="email" value={email} name="email" handleChange={handleChangeLogin} />
+					<Input id="nom" value={firstName} label="Nom" name="firstName" handleChange={handleChangeLogin} />
+					<Input id="prenom" value={lastName} label="Prénom" name="lastName" handleChange={handleChangeLogin} />
+					<Input id="email" type="email" label="Email" value={email} name="email" handleChange={handleChangeLogin} />
 					{messageForm && <p className="error-form">Veuillez remplir tout les champs</p>}
 					<input
 						type="submit"

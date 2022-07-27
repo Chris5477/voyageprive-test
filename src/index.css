@@ -120,9 +120,12 @@ input {
 /* LOGIN PAGE ************************************************************************************************************/
 
 .login-page {
-	padding: 150px 280px;
 	position: relative;
+	overflow: hidden;
 	background: linear-gradient(180deg, rgba(29, 29, 29, 0.2) 0%, rgba(29, 29, 29, 0.2) 100%);
+	display: grid;
+	grid-template-columns: 14% repeat(8, 1fr) 14%;
+	grid-template-rows: repeat(8, 15%);
 }
 
 .bg-login,
@@ -161,17 +164,19 @@ input {
 	}
 }
 
+.head-page {
+	grid-area: 2/2/6/6;
+}
+
 .head-page h1 {
-	width: 320px;
+	width: 280px;
 }
 
 .login-page main {
-	display: flex;
-	justify-content: space-between;
+	grid-area: 3/8/6/10;
 }
 
 .title-login-page {
-	width: 40%;
 	color: #fff;
 	font-weight: 400;
 	font-size: 54px;
@@ -186,9 +191,12 @@ input {
 }
 
 .login-form {
+	display: inline-block;
 	background-color: #fff;
 	justify-content: space-around;
-	padding: 5px 40px 40px 40px;
+	padding: 15px 40px 94px 40px;
+	transform: translate(-60px, -20px);
+	position: relative;
 }
 
 .login-form h2 {
@@ -205,13 +213,14 @@ input {
 }
 
 input[type="submit"] {
+	width: 130px;
+	height: 44px;
 	background-color: #bd1343;
-	text-align: center;
-	font-weight: bold;
 	color: #fff;
-	padding: 13px 25px;
-	place-self: flex-end;
+	font-weight: bold;
 	margin-top: 20px;
+	position: absolute;
+	right: 40px;
 }
 
 /* OFFERS PAGE ************************************************************************************************************/
@@ -337,8 +346,8 @@ input[type="submit"] {
 
 /* RESPONSIVE DESIGN ************************************************************************************************************/
 
-@media screen and (min-width : 499px) and (max-width : 1051px){
-	.card{
+@media screen and (min-width: 499px) and (max-width: 1051px) {
+	.card {
 		margin-top: -20px;
 		margin-bottom: 40px;
 		width: 95%;
@@ -350,21 +359,25 @@ input[type="submit"] {
 	/* LOGIN PAGE ****************************************************************************/
 
 	.login-page {
-		height: auto;
+		height: 100vh;
 		padding: 0px;
 		display: flex;
 		flex-direction: column;
 		justify-content: space-around;
 		align-items: center;
+		background: linear-gradient(180deg, rgba(29, 29, 29, 0.2) 0%, rgba(29, 29, 29, 0.2) 100%);
 	}
 
 	.login-page main {
-		display: block;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.head-page h1 {
 		width: 220px;
-		margin-top: 40px;
+		margin: 10px auto;
 	}
 
 	.title-login-page {
@@ -383,16 +396,8 @@ input[type="submit"] {
 	}
 
 	.login-form {
-		width: 90%;
-		margin: auto;
-		padding: 0;
-		justify-content: center;
-		align-items: center;
-		padding: 5px 40px 40px 40px;
-	}
-
-	.login-form h2 {
-		place-self: flex-start;
+		height: auto;
+		padding: 20px 40px 40px 40px;
 	}
 
 	.form-data input {
@@ -400,8 +405,8 @@ input[type="submit"] {
 	}
 
 	input[type="submit"] {
+		position: initial;
 		padding: 13px 25px;
-		place-self: initial;
 		width: 255px;
 		height: 44px;
 	}
@@ -443,10 +448,10 @@ input[type="submit"] {
 		margin-top: 20px;
 	}
 
-	.description{
-		text-overflow : ellipsis;
-		overflow : hidden;
-		white-space : nowrap;
+	.description {
+		text-overflow: ellipsis;
+		overflow: hidden;
+		white-space: nowrap;
 		padding-right: 10px;
 	}
 
