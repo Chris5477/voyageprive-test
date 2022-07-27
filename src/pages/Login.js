@@ -1,10 +1,10 @@
-import logoVP from "../assets/logo/VPLogo.svg";
 import bgLogin from "../assets/background-image/bg-login.jpg";
 import Input from "../components/Input";
 import { useEffect, useState } from "react";
 import bgLogin2 from "../assets/background-image/bg-login2.jpg";
 import bgLogin3 from "../assets/background-image/bg-login3.jpg";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 
 const Login = () => {
 	const navigate = useNavigate();
@@ -97,13 +97,8 @@ const Login = () => {
 					alt={listBgImage[indexSecondImg].alt}
 				/>
 			</figure>
-			<header>
-				<h1>
-					<img src={logoVP} alt="Voyage privé" />
-				</h1>
-			</header>
+			<Header />
 			<main>
-				<h2 className="title-login-page">Quel sera votre prochain voyage ?</h2>
 				<form className="login-form" onSubmit={login}>
 					<h2>Connectez-vous</h2>
 					<Input id="nom" value={firstName} name="firstName" handleChange={handleChangeLogin} />

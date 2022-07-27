@@ -1,21 +1,12 @@
 import headBarcelona from "../assets/offers/barcelona/barcelona.jpg";
-import logoVP from "../assets/logo/VPLogo.svg";
+import Header from "../components/Header";
 import { offers } from "../utils/offers";
 import Card from "../components/Card";
 
 const Offers = () => {
 	return (
 		<div className="page offers-page">
-			<header>
-				<figure className="bg-offers">
-					<img src={headBarcelona} alt="Aperçu de Barcelone" />
-				</figure>
-				<div className="overlay"></div>
-				<h1>
-					<img src={logoVP} alt="Voyage privé" />
-				</h1>
-				<h2 className="offers">Nos offres Barcelone</h2>
-			</header>
+			<Header destination={"Barcelone"} picture={headBarcelona} />
 			<main>
 				<div className="grid-card">
 					{offers.map(({ id, pictureUrl, country, location, description, establishment, promotion }) => (

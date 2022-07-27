@@ -74,19 +74,19 @@ input {
 }
 
 @keyframes logo {
-	0%{
+	0% {
 		opacity: 0;
 		transform: translate(-50%, -50%);
 		width: 35%;
 	}
 
-	60%{
+	60% {
 		opacity: 1;
 		width: 15%;
 		transform: translate(-50%, -50%);
 	}
 
-	100%{
+	100% {
 		opacity: 1;
 		width: 15%;
 		transform: translate(-350px, -50%);
@@ -107,11 +107,11 @@ input {
 }
 
 @keyframes title {
-	0%{
+	0% {
 		opacity: 0;
 	}
 
-	100%{
+	100% {
 		opacity: 1;
 	}
 }
@@ -121,6 +121,7 @@ input {
 .login-page {
 	padding: 150px 280px;
 	position: relative;
+	background: linear-gradient(180deg, rgba(29, 29, 29, 0.2) 0%, rgba(29, 29, 29, 0.2) 100%);
 }
 
 .bg-login,
@@ -159,7 +160,7 @@ input {
 	}
 }
 
-.login-page header h1 {
+.head-page h1 {
 	width: 320px;
 }
 
@@ -331,7 +332,7 @@ input[type="submit"] {
 		display: block;
 	}
 
-	.login-page header h1 {
+	.head-page h1 {
 		width: 220px;
 		margin-top: 40px;
 	}
