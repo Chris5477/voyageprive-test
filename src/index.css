@@ -356,6 +356,41 @@ input[type="submit"] {
 
 /* VERSION MOBILE *********************************/
 @media screen and (max-width: 498px) {
+	.content-cover {
+		background-position: center;
+	}
+	.loader-page img {
+		width: 25%;
+		top: 50%;
+	}
+
+	@keyframes logo {
+		0% {
+			opacity: 0;
+			transform: translate(-50%, -50%);
+			width: 35%;
+		}
+
+		60% {
+			opacity: 1;
+			width: 15%;
+			transform: translate(-50%, -50%);
+		}
+
+		100% {
+			opacity: 1;
+			width: 15%;
+			transform: translate(-160%, -50%);
+		}
+	}
+
+	.loader-page h1 {
+		font-size: 20px;
+		line-height: 20px;
+		top: 50%;
+		letter-spacing: 2px;
+	}
+
 	/* LOGIN PAGE ****************************************************************************/
 
 	.login-page {
