@@ -4,8 +4,11 @@ import Input from "../components/Input";
 import { useEffect, useState } from "react";
 import bgLogin2 from "../assets/background-image/bg-login2.jpg";
 import bgLogin3 from "../assets/background-image/bg-login3.jpg";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+	const navigate = useNavigate();
+
 	const loginInitialState = {
 		firstName: "",
 		lastName: "",
@@ -30,12 +33,12 @@ const Login = () => {
 		setUserData({ ...userData, [name]: value });
 	};
 
-	const requestWaitingSimulation = () => {
+	const requestWaitingSimulation = async () => {
 		redirectUserToOfferPage();
 	};
 
 	const redirectUserToOfferPage = () => {
-		setTimeout(() => (window.location.href = "localhost:3000/offers"), 2000);
+		setTimeout(() => navigate("/offers"), 2000);
 	};
 
 	const removeClassCSS = () => {
