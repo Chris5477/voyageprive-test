@@ -8,7 +8,7 @@ const Offers = () => {
 		<div className="page offers-page">
 			<Header destination={"Barcelone"} picture={headBarcelona} />
 			<main>
-				<div className="grid-card">
+				<div className="flexbox-card">
 					{offers.map(({ id, pictureUrl, country, location, description, establishment, promotion }) => (
 						<Card
 							key={id}
