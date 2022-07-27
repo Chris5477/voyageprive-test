@@ -18,8 +18,8 @@ const Login = () => {
 		{ picture: bgLogin3, alt: "ville au bord de la mer" },
 	];
 
-	const [a, setA] = useState(0);
-	const [b, setB] = useState(1);
+	const [indexFirstImg, setIndexFirstImg] = useState(0);
+	const [indexSecondImg, setIndexSecondImg] = useState(1);
 	const [userData, setUserData] = useState(loginInitialState);
 	const [messageForm, setMessageForm] = useState(false);
 	const { firstName, lastName, email } = userData;
@@ -54,17 +54,17 @@ const Login = () => {
 	};
 
 	const settingsIndex = () => {
-		const c = a + 1;
-		const d = b + 1;
-		if (listBgImage.at(c) == undefined) {
-			setA(0);
-			setB(d);
-		} else if (listBgImage.at(d) == undefined) {
-			setB(0);
-			setA(c);
+		const nextIndexFirstImg = indexFirstImg + 1;
+		const nextIndexSecondImg = indexSecondImg + 1;
+		if (listBgImage.at(nextIndexFirstImg) == undefined) {
+			setIndexFirstImg(0);
+			setIndexSecondImg(nextIndexSecondImg);
+		} else if (listBgImage.at(nextIndexSecondImg) == undefined) {
+			setIndexSecondImg(0);
+			setIndexFirstImg(nextIndexFirstImg);
 		} else {
-			setA(c);
-			setB(d);
+			setIndexFirstImg(nextIndexFirstImg);
+			setIndexSecondImg(nextIndexSecondImg);
 		}
 	};
 
@@ -74,7 +74,7 @@ const Login = () => {
 			removeClassCSS();
 			setTimeout(addAnimationClass, 100);
 		}, 5000);
-	}, [a, b]);
+	}, [indexFirstImg, indexSecondImg]);
 
 	const login = (e) => {
 		e.preventDefault();
@@ -91,8 +91,12 @@ const Login = () => {
 	return (
 		<div className="page login-page">
 			<figure className="bg-login">
-				<img className="banner" src={listBgImage[a].picture} alt={listBgImage[a].alt} />
-				<img className="banner absolute-pos" src={listBgImage[b].picture} alt={listBgImage[b].alt} />
+				<img className="banner" src={listBgImage[indexFirstImg].picture} alt={listBgImage[indexFirstImg].alt} />
+				<img
+					className="banner absolute-pos"
+					src={listBgImage[indexSecondImg].picture}
+					alt={listBgImage[indexSecondImg].alt}
+				/>
 			</figure>
 			<header>
 				<h1>
