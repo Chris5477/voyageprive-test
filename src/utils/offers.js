@@ -1,7 +1,7 @@
-import picture1 from "../assets/offers/barcelona/picture1.jpg";
-import picture2 from "../assets/offers/barcelona/picture2.jpg";
-import picture3 from "../assets/offers/barcelona/picture3.jpg";
-import picture4 from "../assets/offers/barcelona/picture4.jpg";
+import picture1 from "../assets/offers/barcelona/picture1.webp";
+import picture2 from "../assets/offers/barcelona/picture2.webp";
+import picture3 from "../assets/offers/barcelona/picture3.webp";
+import picture4 from "../assets/offers/barcelona/picture4.webp";
 
 export const offers = [
 	{

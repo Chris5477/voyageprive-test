@@ -1,4 +1,4 @@
-import headBarcelona from "../assets/offers/barcelona/barcelona.jpg";
+import headBarcelona from "../assets/offers/barcelona/barcelona.webp";
 import Header from "../components/Header";
 import { offers } from "../utils/offers";
 import Card from "../components/Card";
