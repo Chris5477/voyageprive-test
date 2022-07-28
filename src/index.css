@@ -29,7 +29,8 @@ h6 {
 p,
 label,
 button,
-input {
+input,
+span {
 	font-family: "source_sans_proregular", Arial, Helvetica, sans-serif;
 }
 
@@ -207,6 +208,8 @@ input {
 .form-data input {
 	width: 220px;
 	height: 44px;
+	font-size: 20px;
+	padding-left: 5px;
 }
 
 .error-form {
@@ -283,9 +286,35 @@ input[type="submit"] {
 	margin-bottom: 50px;
 }
 
+.card figure {
+	position: relative;
+	
+}
+
 .card-picture img {
 	width: 100%;
 	height: 300px;
+}
+
+.time-left {
+	background: linear-gradient(200deg, rgba(0, 0, 0,0.3) 0%, rgba(0, 0, 0, 0) 97.34%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 3px 6px;
+	position: absolute;
+	bottom: 2%;
+	left: 1%;
+	color: #fff;
+	font-size: 14px;
+	line-height: 14px;
+	font-weight: 400;
+}
+
+.time-left img{
+	width: 30px;
+	height: 30px;
+	margin-right: 5px;
 }
 
 .offer {
@@ -440,6 +469,7 @@ input[type="submit"] {
 
 	.form-data input {
 		width: 255px;
+		font-size: 16px;
 	}
 
 	input[type="submit"] {

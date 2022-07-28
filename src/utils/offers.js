@@ -12,6 +12,7 @@ export const offers = [
 		description: "Détente à deux pas de la plage en demi pension",
 		establishment: "Hôtel Volga 4*",
 		promotion: 56,
+		timeLeft: 5,
 	},
 	{
 		id: 101,
@@ -21,6 +22,7 @@ export const offers = [
 		description: "Séjour idéal en plein cœur de la ville avec piscine sur le toit",
 		establishment: "Ilunion Les Corts Spa 4*",
 		promotion: 65,
+		timeLeft: 6,
 	},
 	{
 		id: 102,
@@ -30,6 +32,7 @@ export const offers = [
 		description: "Virée aux couleurs blaugrana pour une expérience mémorable",
 		establishment: "Hôtel Volga 4*",
 		promotion: 74,
+		timeLeft: 2,
 	},
 	{
 		id: 103,
@@ -39,5 +42,6 @@ export const offers = [
 		description: "Départ immédiat : Luxe et raffinement en formule tout inclus",
 		establishment: "Hôtel & Spa Augusta Club 4* - Adult Only",
 		promotion: 68,
+		timeLeft: 2,
 	},
 ];

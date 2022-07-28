@@ -18,7 +18,7 @@ const Offers = () => {
 			<Header destination={"Barcelone"} picture={headBarcelona} />
 			<main>
 				<div className="flexbox-card">
-					{offers.map(({ id, pictureUrl, country, location, description, establishment, promotion }) => (
+					{offers.map(({ id, pictureUrl, country, location, description, establishment, promotion, timeLeft }) => (
 						<Card
 							key={id}
 							picture={pictureUrl}
@@ -27,6 +27,7 @@ const Offers = () => {
 							description={description}
 							establishment={establishment}
 							promotion={promotion}
+							time={timeLeft}
 						/>
 					))}
 				</div>

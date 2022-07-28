@@ -1,5 +1,5 @@
 import Input from "../components/Input";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useNavigate } from "react-router-dom";
 import Header from "../components/Header";
 import { listBgImage } from "../utils/listPicturesBg";
@@ -11,10 +11,9 @@ const Login = () => {
 		email: "",
 	};
 
-
 	//SET TOKEN TO DENY ACCESS TO USER OFFER PAGE IF NO COMPLETE FORM
 
-	const token = "1055gosmzsfsdsdrngisolel12pf"
+	const token = "1055gosmzsfsdsdrngisolel12pf";
 
 	// SETTINGS HOOKS **********************************************************
 
@@ -24,6 +23,8 @@ const Login = () => {
 	const [userData, setUserData] = useState(loginInitialState);
 	const [messageForm, setMessageForm] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
+	const inputRef = useRef()
+
 
 	// GET ALL KEY OF INITIALSTATE **********************************************
 
@@ -49,7 +50,7 @@ const Login = () => {
 		} else {
 			setMessageForm(false);
 			setIsSubmitting(true);
-			localStorage.setItem("token", token)
+			localStorage.setItem("token", token);
 			redirectUserToOfferPage();
 		}
 	};
@@ -83,6 +84,8 @@ const Login = () => {
 
 	// ALLOWS TO CHANGES INDEX OF PICTURE BACKGROUND ALL THE 5 SECONDES ***************
 
+	useEffect(() => inputRef.current.focus(), [])
+
 	useEffect(() => {
 		setTimeout(() => {
 			settingsIndex();
@@ -94,7 +97,11 @@ const Login = () => {
 	return (
 		<div className="page login-page">
 			<figure className="bg-login">
-				<img className="banner fade-out" src={listBgImage[indexFirstImg].picture} alt={listBgImage[indexFirstImg].alt} />
+				<img
+					className="banner fade-out"
+					src={listBgImage[indexFirstImg].picture}
+					alt={listBgImage[indexFirstImg].alt}
+				/>
 				<img
 					className="banner absolute-pos fade-in"
 					src={listBgImage[indexSecondImg].picture}
@@ -103,9 +110,9 @@ const Login = () => {
 			</figure>
 			<Header />
 			<main>
-				<form className="login-form" onSubmit={login}>
-					<h2>Connectez-vous</h2>
-					<Input id="nom" value={firstName} label="Nom" name="firstName" handleChange={handleChangeLogin} />
+				<form tabIndex="0" aria-label="formulaire de connexion"  className="login-form" onSubmit={login}>
+					<h2 tabIndex="0">Connectez-vous</h2>
+					<Input ref={inputRef} id="nom" value={firstName} label="Nom" name="firstName" handleChange={handleChangeLogin} />
 					<Input id="prenom" value={lastName} label="Prénom" name="lastName" handleChange={handleChangeLogin} />
 					<Input id="email" type="email" label="Email" value={email} name="email" handleChange={handleChangeLogin} />
 					{messageForm && <p className="error-form">Veuillez remplir tout les champs</p>}
