@@ -11,11 +11,16 @@ const Login = () => {
 		email: "",
 	};
 
+
+	//SET TOKEN TO DENY ACCESS TO USER OFFER PAGE IF NO COMPLETE FORM
+
+	const token = "1055gosmzsfsdsdrngisolel12pf"
+
 	// SETTINGS HOOKS **********************************************************
 
 	const navigate = useNavigate();
-	const [indexFirstImg, setIndexFirstImg] = useState(0);
-	const [indexSecondImg, setIndexSecondImg] = useState(1);
+	const [indexFirstImg, setIndexFirstImg] = useState(2);
+	const [indexSecondImg, setIndexSecondImg] = useState(0);
 	const [userData, setUserData] = useState(loginInitialState);
 	const [messageForm, setMessageForm] = useState(false);
 	const [isSubmitting, setIsSubmitting] = useState(false);
@@ -44,6 +49,7 @@ const Login = () => {
 		} else {
 			setMessageForm(false);
 			setIsSubmitting(true);
+			localStorage.setItem("token", token)
 			redirectUserToOfferPage();
 		}
 	};
@@ -88,9 +94,9 @@ const Login = () => {
 	return (
 		<div className="page login-page">
 			<figure className="bg-login">
-				<img className="banner" src={listBgImage[indexFirstImg].picture} alt={listBgImage[indexFirstImg].alt} />
+				<img className="banner fade-out" src={listBgImage[indexFirstImg].picture} alt={listBgImage[indexFirstImg].alt} />
 				<img
-					className="banner absolute-pos"
+					className="banner absolute-pos fade-in"
 					src={listBgImage[indexSecondImg].picture}
 					alt={listBgImage[indexSecondImg].alt}
 				/>

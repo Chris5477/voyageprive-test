@@ -2,8 +2,17 @@ import headBarcelona from "../assets/offers/barcelona/barcelona.jpg";
 import Header from "../components/Header";
 import { offers } from "../utils/offers";
 import Card from "../components/Card";
+import { useNavigate } from "react-router-dom";
+import { useEffect } from "react";
 
 const Offers = () => {
+
+	const navigate = useNavigate()
+
+	useEffect(() => {
+		!localStorage.getItem("token") && navigate("/login")
+	})
+
 	return (
 		<div className="page offers-page">
 			<Header destination={"Barcelone"} picture={headBarcelona} />

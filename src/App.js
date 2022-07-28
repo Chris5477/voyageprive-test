@@ -7,7 +7,7 @@ import { useEffect, useState } from "react";
 const App = () => {
 	const [redirect, setRedirect] = useState(false);
 	useEffect(() => {
-		setTimeout(() => setRedirect(true), 6000);
+		setTimeout(() => setRedirect(true), 3000);
 	}, [redirect]);
 
 	return (

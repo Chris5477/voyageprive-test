@@ -1,5 +1,4 @@
 import logo from "../assets/logo/V.svg";
-import cover from "../assets/background-image/cover.jpg";
 
 const LoaderApp = () => {
 	return (
