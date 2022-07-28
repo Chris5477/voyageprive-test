@@ -53,8 +53,6 @@ input {
 
 .loader-page {
 	background-color: black;
-	width: 100%;
-	height: 100vh;
 }
 
 .content-cover {
@@ -74,6 +72,18 @@ input {
 	animation: logo 1s 1.3s forwards;
 }
 
+.loader-page h1 {
+	color: #fff;
+	font-size: 90px;
+	line-height: 90px;
+	position: absolute;
+	top: 58%;
+	left: 50%;
+	opacity: 0;
+	transform: translate(-27%, -50%);
+	letter-spacing: 4px;
+	animation: title 0.8s ease-in-out 1.8s forwards;
+}
 @keyframes logo {
 	0% {
 		opacity: 0;
@@ -92,19 +102,6 @@ input {
 		width: 15%;
 		transform: translate(-350px, -50%);
 	}
-}
-
-.loader-page h1 {
-	color: #fff;
-	font-size: 90px;
-	line-height: 90px;
-	position: absolute;
-	top: 58%;
-	left: 50%;
-	opacity: 0;
-	transform: translate(-27%, -50%);
-	letter-spacing: 4px;
-	animation: title 0.8s ease-in-out 1.8s forwards;
 }
 
 @keyframes title {
@@ -184,7 +181,6 @@ input {
 	margin-top: 90px;
 }
 
-.login-form,
 .form-data {
 	display: flex;
 	flex-direction: column;
@@ -213,7 +209,7 @@ input {
 	height: 44px;
 }
 
-.error-form{
+.error-form {
 	color: red;
 	font-size: 16px;
 	padding-top: 5px;
@@ -224,7 +220,7 @@ input[type="submit"] {
 	height: 44px;
 	background-color: #bd1343;
 	color: #fff;
-	font-weight: bold;
+	font-weight: 700;
 	margin-top: 15px;
 	position: absolute;
 	right: 40px;
@@ -332,13 +328,16 @@ input[type="submit"] {
 	color: #666666;
 }
 
-.promotion-rate {
+.promotion-rate,
+.promotion-rate span {
 	color: #bd1343;
+	text-align: center;
+}
+
+.promotion-rate {
 	font-size: 12px;
 	font-weight: 400;
 	line-height: 15px;
-	letter-spacing: 0px;
-	text-align: center;
 	width: 100%;
 }
 
@@ -347,13 +346,13 @@ input[type="submit"] {
 	font-weight: 600;
 	font-size: 28px;
 	line-height: 37px;
-	text-align: center;
-	color: #bd1343;
 }
 
 /* RESPONSIVE DESIGN ************************************************************************************************************/
 
 @media screen and (min-width: 499px) and (max-width: 1051px) {
+	/* RESIZE CARD FOR THE MEDIUM SCREEN ***************/
+
 	.card {
 		margin-top: -20px;
 		margin-bottom: 40px;
@@ -362,13 +361,22 @@ input[type="submit"] {
 }
 
 /* VERSION MOBILE *********************************/
+
 @media screen and (max-width: 498px) {
+	/* LOADER PAGE **************************************/
+
 	.content-cover {
 		background-position: center;
 	}
 	.loader-page img {
 		width: 25%;
 		top: 50%;
+	}
+	.loader-page h1 {
+		font-size: 20px;
+		line-height: 20px;
+		top: 50%;
+		letter-spacing: 2px;
 	}
 
 	@keyframes logo {
@@ -391,20 +399,11 @@ input[type="submit"] {
 		}
 	}
 
-	.loader-page h1 {
-		font-size: 20px;
-		line-height: 20px;
-		top: 50%;
-		letter-spacing: 2px;
-	}
-
 	/* LOGIN PAGE ****************************************************************************/
 
 	.login-page {
 		height: 100vh;
-		padding: 0px;
 		display: block;
-		background: linear-gradient(180deg, rgba(29, 29, 29, 0.2) 0%, rgba(29, 29, 29, 0.2) 100%);
 	}
 
 	.login-page main {
@@ -428,16 +427,14 @@ input[type="submit"] {
 	}
 
 	.banner {
-		width: 100%;
 		height: 100vh;
-		object-fit: cover;
 		object-position: center;
 	}
 
 	.login-form {
 		height: auto;
 		padding: 20px 40px 40px 40px;
-		transform: translate(0)
+		transform: translate(0);
 	}
 
 	.form-data input {
@@ -446,9 +443,7 @@ input[type="submit"] {
 
 	input[type="submit"] {
 		position: initial;
-		padding: 13px 25px;
 		width: 255px;
-		height: 44px;
 	}
 
 	/* OFFERS PAGE ***************************/
@@ -466,12 +461,6 @@ input[type="submit"] {
 		font-size: 42px;
 		line-height: 42px;
 		margin-top: 10px;
-	}
-
-	.flex-card {
-		width: 100%;
-		grid-gap: 0;
-		margin: 10px auto;
 	}
 
 	.card {
@@ -497,6 +486,5 @@ input[type="submit"] {
 
 	.promotion {
 		width: 25%;
-		border-left: 1px solid #d3d3d3;
 	}
 }
