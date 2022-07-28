@@ -70,10 +70,10 @@ const Login = () => {
 	const settingsIndex = () => {
 		const nextIndexFirstImg = indexFirstImg + 1;
 		const nextIndexSecondImg = indexSecondImg + 1;
-		if (listBgImage.at(nextIndexFirstImg) == undefined) {
+		if (listBgImage.at(nextIndexFirstImg) === undefined) {
 			setIndexFirstImg(0);
 			setIndexSecondImg(nextIndexSecondImg);
-		} else if (listBgImage.at(nextIndexSecondImg) == undefined) {
+		} else if (listBgImage.at(nextIndexSecondImg) === undefined) {
 			setIndexSecondImg(0);
 			setIndexFirstImg(nextIndexFirstImg);
 		} else {
@@ -92,7 +92,7 @@ const Login = () => {
 			removeClassCSS();
 			setTimeout(addAnimationClass, 100);
 		}, 5000);
-	}, [indexFirstImg, indexSecondImg]);
+	});
 
 	return (
 		<div className="page login-page">

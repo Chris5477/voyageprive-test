@@ -25,7 +25,7 @@ const Card = ({ picture, country, location, description, establishment, promotio
 				</div>
 				<div role="region" aria-label="promotion de l'offre" className="promotion">
 					<p tabIndex="0" className="promotion-rate">
-						Jusqu'à <span role="text">-{promotion}%</span>
+						Jusqu'à <span>-{promotion}%</span>
 					</p>
 				</div>
 			</div>

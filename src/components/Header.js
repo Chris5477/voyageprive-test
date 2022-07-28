@@ -8,14 +8,18 @@ const Header = ({ destination, picture }) => {
 			</h1>
 			{destination ? (
 				<>
-					<h2 tabIndex="0" className="offers">Nos offres {destination}</h2>
+					<h2 tabIndex="0" className="offers">
+						Nos offres {destination}
+					</h2>
 					<figure className="bg-offers">
 						<img src={picture} alt="Aperçu de Barcelone" />
 					</figure>
 					<div role="dialog" className="overlay"></div>
 				</>
 			) : (
-				<h2 tabindex="0" className="title-login-page">Quel sera votre prochain voyage ?</h2>
+				<h2 tabIndex="0" className="title-login-page">
+					Quel sera votre prochain voyage ?
+				</h2>
 			)}
 		</header>
 	);
