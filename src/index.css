@@ -126,6 +126,7 @@ span {
 	grid-template-rows: repeat(8, 15%);
 }
 
+
 .bg-login,
 .absolute-pos {
 	position: absolute;
@@ -136,8 +137,9 @@ span {
 
 .banner {
 	width: 100%;
+	min-height: 1000px;
 	object-fit: cover;
-	object-position: 0px -55px;
+	object-position: center -55px;
 }
 
 .absolute-pos {
@@ -381,6 +383,8 @@ input[type="submit"] {
 /* RESPONSIVE DESIGN ************************************************************************************************************/
 
 @media screen and (min-width: 499px) and (max-width: 1051px) {
+
+	
 	/* RESIZE CARD FOR THE MEDIUM SCREEN ***************/
 
 	.card {
@@ -520,6 +524,7 @@ input[type="submit"] {
 	.time-left img{
 		width: 14px;
 		height: 14px;
+		margin-right: 5px;
 	}
 
 	.promotion {
