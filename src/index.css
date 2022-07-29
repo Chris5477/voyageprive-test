@@ -297,7 +297,7 @@ input[type="submit"] {
 }
 
 .time-left {
-	background: linear-gradient(200deg, rgba(0, 0, 0,0.3) 0%, rgba(0, 0, 0, 0) 97.34%);
+	background: rgba(0, 0, 0,0.3);
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -515,6 +515,11 @@ input[type="submit"] {
 		overflow: hidden;
 		white-space: nowrap;
 		padding-right: 10px;
+	}
+
+	.time-left img{
+		width: 14px;
+		height: 14px;
 	}
 
 	.promotion {
